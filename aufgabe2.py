@@ -1,14 +1,14 @@
 # Zusammenarbeit mit folgenden Teilnehmern:
-def cross_sum(n, b):
-    digits = []
-    while n > 0:
-        digits.append(n % b)
-        n //= b
+def shortName(name):
+    namen = name.split(" ")
+    if len(namen) == 1:
+        return name
 
-    crosssum = 0
-    for digit in digits:
-        crosssum += digit
+    nachname = namen.pop()
 
-    return crosssum
+    for n in namen:
+        namen[namen.index(n)]=n[0]
+    
+    shortedName = ".".join(namen) + ". "
 
-print(cross_sum(212, 16))
+    return (shortedName + nachname).strip()
